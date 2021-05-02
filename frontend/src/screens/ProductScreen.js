@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap"
 import Rating from "../components/Rating"
-import products from "../products"
+import axios from "axios"
+
+// import products from "../products" we get rid of this because we are now getting products from the backend
 const ProductScrren = ({match}) => {
-    const product = products.find(p => p._id === match.params.id)
+    // const product = products.find(p => p._id === match.params.id) // this is we fetch from the frontend not backend
+    const [product, setProduct] = useState({}) //we use {} bcasue product is an object
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+            const {data} = await axios.get(`/api/products/${match.params.id}`)
+
+            setProduct(data)
+        }
+        fetchProduct()
+    }, [])
 
     return (
         <>
