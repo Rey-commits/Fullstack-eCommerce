@@ -9,9 +9,9 @@ const connectDB = async () => {
             useCreateIndex: true
         })
 
-        console.log(`MongoDB Connected: ${conn.connection.host}`)
+        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold) //.cyan.underline is added to change colors on the console
     } catch (error) {
-        console.error(`Error: ${error.message}`)
+        console.error(`Error: ${error.message}`.red.underline.bold)
         process.exit(1)
     }
 }
