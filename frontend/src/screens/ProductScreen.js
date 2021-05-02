@@ -16,7 +16,7 @@ const ProductScrren = ({match}) => {
             setProduct(data)
         }
         fetchProduct()
-    }, [])
+    },[match])
 
     return (
         <>
