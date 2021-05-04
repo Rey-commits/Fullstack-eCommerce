@@ -1,8 +1,7 @@
 # frontend node modules
 /frontend/node_modules
 
-# users
-/backend/data/users.js
+
 
 # backend
 # /backend
