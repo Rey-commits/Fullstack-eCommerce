@@ -9,7 +9,7 @@ import {listProductDetails} from "../actions/productActions"
 
 // import products from "../products" we get rid of this because we are now getting products from the backend
 const ProductScrren = ({history, match}) => {
-    const [qty, setQty] = useState(0) 
+    const [qty, setQty] = useState(1) 
 
 
 
@@ -86,7 +86,7 @@ const ProductScrren = ({history, match}) => {
                                                             {x + 1}
                                                         </option>
                                                     ))}
-                                                </Form.Control>
+                                            </Form.Control>
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
